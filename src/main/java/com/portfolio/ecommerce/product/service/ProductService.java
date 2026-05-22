@@ -22,24 +22,19 @@ public class ProductService {
         return repository.findAll();
     }
 
-    public Product getById(Long id){
+    public Product getById(String id){
         return repository.findById(id).orElseThrow(() -> new RuntimeException("Producto no encotrado"));
     }
 
-    public Product update(Long id, Product updated){
+    public Product update(String id, Product updated){
         Product product = getById(id);
         product.setName(updated.getName());
-        product.setDescription(updated.getDescription());
-        product.setShortDescription(updated.getShortDescription());
         product.setPrice(updated.getPrice());
-        product.setSku(updated.getSku());
-        product.setStock(updated.getStock());
-        product.setActive(updated.isActive());
 
         return repository.save(product);
     }
 
-    public void delete(Long id){
+    public void delete(String id){
         repository.deleteById(id);
     }
 }

@@ -9,17 +9,11 @@ import java.util.Map;
 public class ProductResponse {
     private String id;
     private String name;
-    private String description;
-    private String shortDescription;
     private Double price;
-    private Integer stock;
-    private Boolean active;
 
-    private String categoryName;
-
-    private List<String> images;
-
-    private Map<String, String> attributes;
-
-    private Double rating;
+    public ProductResponse(String id, String name, double price){
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
 }
